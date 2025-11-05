@@ -1,0 +1,56 @@
+{% extends 'tasks/base.html' %}
+
+{% block content %}
+
+<h2>{{ task.title }}</h2>
+<h3>{{ error }}</h3>
+<!--{{ data_complete }}-->
+<img src="{{ memo_images.url }}" width="60" >
+<div class="but_1">
+    <form method="post" class="view_task" enctype="multipart/form-data">
+    {% csrf_token %}
+             {{ form.user.label }}
+            {{ form.user }}<br>
+             {{ form.title.label }}
+             {{ form.title }}
+             {{ form.lines.label }}
+             {{ form.lines }}
+             {{ form.place.label }}
+             {{ form.place }}
+        <div class="b2">
+
+        </div>
+                 {{ form.memo.label }}
+                 {{ form.memo|safe }}
+                 {{ form.memo_images.label }}
+                {{ form.memo_images }}
+
+                 {{ form.decision.label }}
+                 {{ form.decision|safe  }}
+                 {{ form.decision_images.label }}
+                 {{ form.decision_images }}
+        <div class="b5">
+            <div class="b3">
+
+             </div>
+            <div class="b4">
+
+
+             </div>
+        </div>
+
+<!--    {{ form.important }}-->
+
+        <button class="btn">Сохранить</button>
+    </form>
+    <form action="{% url 'completetask' task.id %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <button class="btn good" >Выполнено</button>
+    </form>
+
+    <form action="{% url 'deletetask' task.id %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <button class="btn remove">Удалить</button>
+    </form>
+</div>
+{% endblock %}

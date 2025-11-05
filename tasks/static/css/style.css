@@ -1,0 +1,351 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: #00f291;
+}
+.wrap{
+    max-width: 1400px;
+    margin: auto;
+    padding: 10px 30px;
+    box-sizing: border-box;
+    background: #fff;
+    
+}
+.menu{
+    background: #008e56;
+    box-shadow: 0 2px 12px 2px #008e56;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.menu ul{
+    list-style: none;
+    padding-left: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    margin: 0;
+}
+.menu a, .menu li{
+    color: #fff;
+    text-decoration: none;
+}
+.menu a:hover{
+    color: yellow;
+}
+/* .content{
+    background: lightgreen;
+} */
+
+.content .wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+    
+}
+h1, h2{
+    color: green;
+    margin: 15px 0;
+}
+.info{
+    display: flex;
+}
+.btn{
+    background: #008e56;
+    color: #fff;
+    }
+button{
+    border-radius: 6px;
+    box-shadow: inset 0 0 6px 2px #fff;
+    padding: 10px 40px;
+    margin-top: 40px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.bg{
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    font-size: 20px;
+}
+.bg select {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.center{
+    text-align: center;
+}
+input{
+    width: 100%;
+    /* box-shadow: 0 2px 8px 2px #008e56; */
+    box-sizing: border-box;
+    margin-top: 4px;
+    margin-bottom: 10px;
+}
+.top{
+    padding: 4px 24px;
+    margin-top: 0;
+    background: transparent;
+    border: none;
+    color: #fff;
+    box-shadow: none;
+}
+.content ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.content li{
+    /* box-shadow: 0 2px 8px 2px #008e56; */
+    margin-bottom: 15px;
+    /* font-size: 20px; */
+}
+.comp_task{
+    box-shadow: 0 2px 8px 2px #008e56;
+    font-size: 20px;
+    padding: 10px;
+}
+.helptext{
+    padding: 0 0 0 20px;
+}
+.register label{
+    font-size: 20px;
+}
+.content a{
+    color: #000;
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+}
+.content a:hover{
+    color: rgb(85, 255, 47);
+}
+.but select,textarea, input{
+    display: flex;
+    align-items: flex-end;
+    font-size: 20px;
+}
+
+.good{
+    background: teal;
+}
+.remove{
+    background: orangered;
+}
+a b{
+    color: orangered;
+}
+.td_2 , .td_1{
+    width: 15%;
+    text-align: center;
+}
+.content table {
+    width: 100%;
+}
+
+ .but_1{
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+ }
+ .but_1 select{
+    font-size: 20px;
+    width: 100%;
+
+ }
+ .but_1 textarea{
+    width: 100%;
+
+ }
+ .b5{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+ 
+ }
+ .b4 , .b3{
+    padding: 10px 5px 15px 0px;
+    
+ }
+ .b4 , .b5{
+    margin-right: 10px;
+    width: auto;
+
+ }
+
+/* .pagination li {
+
+   border: 5px solid#264b5d;
+    margin-bottom: 40px;
+    
+} */
+.form__field select {
+font-size: 20px;
+    width: 100%;
+}
+.list-pages {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.page-num{
+    margin: 6px;
+    /* background:#FFF; */
+    font-weight: bold;
+}
+.page-num-selected{
+    background: #008e56;
+    color: #fff;
+    padding: 5px;
+    
+}
+.list-pages a{
+   text-decoration: none;
+    padding: 5px;
+    display: block;
+    
+}
+
+.task_finish{
+    width: 75%;
+}
+.sidebar ul{
+    width: 320px;
+    margin-right: 40px;
+    margin-top: 20px;
+}
+.sidebar a{
+    padding: 20px;
+    display: block;
+    bottom: 1px solid black;
+    background: #00f291;
+    font-weight: bold;
+    font-size: 18px;
+}
+.sidebar a:hover{
+    color: #fff;
+}
+.selected{
+    font-size: 18px;
+    padding: 20px;
+    bottom: 1px solid black;
+    background: #bdfeca;
+}
+.main li{
+    border: 1px solid teal;
+    margin-bottom: 20px;
+}
+.first, .date{
+    padding: 10px 20px;
+    background: #bdfeca;
+    font-size: 18px;
+    margin: 0;
+}
+.image{
+    max-width: 30%;
+    
+    float: left;
+    margin-right: 20px;
+}
+.text{
+    padding: 20px 20px 0;
+}
+.text h2{
+    margin-top: 0;
+}
+.text a{
+    padding-left: 0;
+}
+.post h2{
+    margin-top: 0;
+}
+.post{
+    font-size: 16px;
+}
+.form_input{
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+.but_add_form{
+    background: #01c375;
+    border: 2px solid #008e56;
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+form label{
+    font-size: 18px;
+}
+.inbox{
+    width: 75%;
+}
+.inbox__title span {
+  color: var(--color-main);
+}
+
+.messages {
+  list-style: none;
+  background: var(--color-white);
+  /* padding: 0.5rem 3rem; */
+  border: 2px solid green;
+  border-radius: 0.7rem;
+}
+
+.message {
+  padding: 2px 0;
+}
+
+/*.message > a span {
+  font-size: 1.45rem;
+  font-weight: 500;
+}*/
+
+.message.message--unread a span {
+  font-weight: bold;
+  /* color: var(--color-sub); */
+}
+
+.message:not(:last-child) {
+  border-bottom: 2px solid var(--color-green-light);
+}
+
+.message > a {
+  display: flex;
+  gap: 3rem;
+  padding: 10px;
+}
+
+.message__author,
+.message__date {
+  flex-basis: 25%;
+}
+
+.message__subject {
+  flex-basis: 50%;
+}
+
+.message__date {
+  text-align: right;
+}
+.messagePage {
+    width: 75%;
+}
+.messagePage .message {
+  list-style: none;
+  background: var(--color-white);
+  padding: 3.5rem 5rem;
+  border: 2px solid green;
+  border-radius: 0.7rem;
+}
+.send {
+    display: flex;
+}

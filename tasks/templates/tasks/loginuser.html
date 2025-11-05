@@ -1,0 +1,16 @@
+{% extends 'tasks/base.html' %}
+
+{% block content %}
+
+<h1>Вход зарегистрированного пользователя</h1>
+<h3>{{ error }}</h3>
+<form method="post" class="bg">
+    {% csrf_token %}
+    {{ form }}
+    <div class="center">
+       <button class="btn">Авторизация</button>
+    </div>
+
+</form>
+
+{% endblock %}

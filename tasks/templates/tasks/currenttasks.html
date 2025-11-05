@@ -1,0 +1,32 @@
+{% extends 'tasks/base.html' %}
+
+      {% block content %}
+
+<h1>Задачи</h1>
+
+      {% for task in tasks %}
+      <table border="1">
+            <tbody>
+            <tr>
+                  <td class="td_1">{{ task.lines}}</td>
+                  <td class="td_2">
+                        <a href="{% url 'viewtask' task.id %}">
+                        {% if task.important %}
+                        <b>{{ task.title}}</b>
+                        {% else %}
+                        {{ task.title}}
+                        {% endif %}
+                        </a>
+                  </td>
+                  <td class="td_3"> {% if task.memo %}
+                  {{ task.memo|striptags|truncatechars:200   }}
+                  {% endif %}
+                  </td>
+            </tr>
+
+            </tbody>
+      </table>
+
+      {% endfor %}
+
+      {% endblock %}

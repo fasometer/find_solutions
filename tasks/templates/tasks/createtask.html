@@ -1,0 +1,31 @@
+{% extends 'tasks/base.html' %}
+
+{% block content %}
+
+<h1>Создание задачи</h1>
+<h3>{{ error }}</h3>
+<form method="post" class="bg" enctype="multipart/form-data">
+    {% csrf_token %}
+<!--    {{ form }}-->
+
+    {{ form.user.label }}
+    {{ form.user }}
+    {{ form.title.label }}
+    {{ form.title }}
+    {{ form.lines.label }}
+    {{ form.lines }}
+    {{ form.place.label }}
+    {{ form.place }}
+    {{ form.memo.label }}
+    {{ form.memo }}
+    {{ form.memo_images.label }}
+    {{ form.memo_images }}
+    {{ form.important }}
+
+    <div class="center">
+        <button class="btn">Создать</button>
+    </div>
+
+</form>
+
+{% endblock %}

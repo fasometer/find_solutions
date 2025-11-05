@@ -1,0 +1,48 @@
+{% extends 'tasks/base.html' %}
+
+{% block content %}
+<section class="hero-section text-center">
+    <div class="container container--narrow">
+        <div class="hero-section__box">
+
+            <h2>---Найдется все--- </h2>
+        </div>
+
+        <div class="hero-section__search">
+            <form class="form" action="#" method="get">
+                <div class="form__field">
+                    <label for="formInput#search">Поиск решений </label>
+                    <input class="input input--text" id="formInput#search" type="text" name="search_query"
+                           value="{{ search_query }}"
+                           placeholder="Поиск решений "/>
+                </div>
+
+                <input class="btn btn--sub btn--lg" type="submit" value="Поиск"/>
+            </form>
+        </div>
+    </div>
+</section>
+<h1>Завершено</h1>
+<ul class="task_finish">
+    {% for task in tasks %}
+    <li class="comp_task">
+        <b>{{ task.title}}</b>
+        {% if task.memo %}
+        - {{ task.memo|safe }}
+        {% endif %}
+        {% if task.memo_images %}
+        <a href="{{ task.memo_images.url }}"><img src="{{ task.memo_images.url }}" width="300" alt=""></a>
+        {% endif %}
+        <br>
+        <b>Решение: </b> {{ task.decision|safe }}
+        {% if task.decision_images %}
+        <a href="{{ task.decision_images.url }}"><img src="{{ task.decision_images.url }}" width="300" alt=""></a>
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+
+{% include 'tasks/pagination.html' with queryset=tasks %}
+
+
+{% endblock %}

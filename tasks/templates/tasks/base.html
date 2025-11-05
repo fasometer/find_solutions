@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+<div class="menu">
+    <div class="wrap_menu">
+        <ul>
+            <div class="logo">
+                <a href="{% url 'index' %}">
+                    <img src="{% static 'tasks/resilux.png' %}" alt="">
+                </a>
+            </div>
+
+            {% if user.is_authenticated %}
+            <li class="logo">Пользователь: {{ user.username}}</li>
+            <li><a href="{% url 'createtask' %}">Создать</a></li>
+            <li><a href="{% url 'currenttasks' %}">Актуальные</a></li>
+            <li><a href="{% url 'completedtasks' %}">Выполненные</a></li>
+            <li><a href="{% url 'inbox' %}">Сообщения</a></li>
+            <li><a href="{% url 'add_page' %}">Добавить статью</a></li>
+            <li>
+                <form action="{% url 'logoutuser' %}" method="post">
+                    {% csrf_token %}
+                    <button class="top">Выйти</button>
+                </form>
+            </li>
+            {% else %}
+            <li><a href="{% url 'signupuser' %}">Зарегистрироваться</a></li>
+            <li><a href="{% url 'createtask' %}">Создать</a></li>
+            <li><a href="{% url 'completedtasks' %}">Выполненные</a></li>
+            <li><a href="{% url 'loginuser' %}">Войти</a></li>
+            {% endif %}
+        </ul>
+
+    </div>
+</div>
+
+
+<div class="content">
+    <div class="wrap">
+        {% block content %}
+
+        {% endblock %}
+    </div>
+</div>
+</body>
+</html>

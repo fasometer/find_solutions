@@ -1,0 +1,36 @@
+{% extends 'tasks/base.html' %}
+{% load blog_tags %}
+{% block content %}
+
+
+<div class="info">
+
+      <div class="sidebar">
+<ul>
+      {% if cat_selected == 0 %}
+      <li class="selected">Все категории</li>
+      {% else %}
+      <li><a href="{% url 'index' %}">Все категории</a></li>
+      {% endif %}
+<!--      {% show_categories cat_selected=cat_selected%}-->
+                  {% for c in cats %}
+                {% if c.blog__count > 0 %}
+                    {% if c.pk == cat_selected %}
+                    <li class="selected">{{ c.name }}</li>
+                    {% else %}
+                    <li><a href="{{ c.get_absolute_url }}">{{ c.name }}</a></li>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+</ul>
+</div>
+      <div class="post">
+    <h2>{{ post.title }}</h2>
+          
+          {% if post.photo %}
+          <img src="{{ post.photo.url }}" alt="" class="image">
+          {% endif %}
+          {{ post.content|safe }}
+</div>
+</div>
+{% endblock %}
