@@ -52,6 +52,7 @@ def login_user(request):
 def logout_user(request):
     if request.method == "POST":
         logout(request)
+        messages.info(request,'Пользователь вышел')
         return redirect('home')
 
 

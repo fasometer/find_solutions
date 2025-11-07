@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>{{title}}</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+<!--    <link rel="stylesheet" href="{% static 'uikit/styles/uikit.css' %}" />-->
 </head>
 
 <body>
@@ -33,7 +34,6 @@
             </li>
             {% else %}
             <li><a href="{% url 'signupuser' %}">Зарегистрироваться</a></li>
-            <li><a href="{% url 'createtask' %}">Создать</a></li>
             <li><a href="{% url 'completedtasks' %}">Выполненные</a></li>
             <li><a href="{% url 'loginuser' %}">Войти</a></li>
             {% endif %}
@@ -45,10 +45,22 @@
 
 <div class="content">
     <div class="wrap">
+
+        {% if messages %}
+            {% for message in messages %}
+            <div >
+                <div class="alert alert--{{ massage.tags }}">
+                <p class="alert__message">{{message}}</p>
+                <button class="alert__close">⨯</button>
+              </div>
+            </div>
+            {% endfor %}
+        {% endif %}
         {% block content %}
 
         {% endblock %}
     </div>
 </div>
+<script src="{% static 'uikit/app.js' %}"></script>
 </body>
 </html>
