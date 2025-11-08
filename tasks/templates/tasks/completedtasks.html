@@ -9,12 +9,11 @@
         </div>
 
         <div class="hero-section__search">
-            <form class="form" action="#" method="get">
+            <form id="search" class="form" action="{% url 'completedtasks' %}" method="get">
                 <div class="form__field">
                     <label for="formInput#search">Поиск решений </label>
-                    <input class="input input--text" id="formInput#search" type="text" name="search_query"
-                           value="{{ search_query }}"
-                           placeholder="Поиск решений "/>
+                    <input class="input input--text" id="formInput#search" value="{{ search_query }}" type="text"
+                           name="search_query" placeholder="Поиск решений "/>
                 </div>
 
                 <input class="btn btn--sub btn--lg" type="submit" value="Поиск"/>

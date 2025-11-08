@@ -4,21 +4,20 @@
 <!--   <div class="pagination">-->
      <ul class="list-pages">
        {% if queryset.has_previous %}
-       <li><a href="?page={{ queryset.previous_page_number }}" class="page-num" data-page="{{ queryset.previous_page_number }}">&lt; </a></li>
+       <li><a href="?page={{ queryset.previous_page_number }}" class="page-num page-link" data-page="{{ queryset.previous_page_number }}">&lt; </a></li>
        {% endif %}
 
        {% for page in custom_range %}
        {% if page == queryset.number %}
-       <li><a href="?page={{ page }}" class="page-num page-num-selected" data-page="{{ page }}">{{ page }}</a></li>
+       <li><a href="?page={{ page }}" class="page-num page-num-selected page-link" data-page="{{ page }}">{{ page }}</a></li>
        {% else %}
-       <li><a href="?page={{ page }}" class="page-num" data-page="{{ page }}">{{ page }}</a></li>
+       <li><a href="?page={{ page }}" class="page-num page-link" data-page="{{ page }}">{{ page }}</a></li>
        {% endif %}
        {% endfor %}
 
        {% if queryset.has_next %}
-       <li><a href="?page={{ queryset.next_page_number }}" class="page-num" data-page="{{ queryset.next_page_number }}"> &gt;</a></li>
+       <li><a href="?page={{ queryset.next_page_number }}" class="page-num page-link" data-page="{{ queryset.next_page_number }}"> &gt;</a></li>
        {% endif %}
      </ul>
 <!--   </div>-->
    {% endif %}
-

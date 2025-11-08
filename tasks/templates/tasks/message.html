@@ -7,7 +7,9 @@
     <div class="content-box">
       <div class="message">
         <a class="backButton" href="{% url 'inbox'%}"><img src="{% static 'tasks/left.png' %}" alt="left"></a>
+        <h4 class="message__author">Тема сообщения:</h4>
         <h3 class="message__subject"> {{ message.subject }}  </h3>
+        <h4 class="message__author">От кого: </h4>
         <h4 class="message__author">{{ message.name }} </h4>
         <p class="message__date">{{ message.created }} </p>
         <div > {{ message.body|linebreaksbr }}  </div>
