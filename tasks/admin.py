@@ -5,8 +5,8 @@ from ckeditor_uploader.widgets import CKEditorUploadingWidget
 
 
 class TaskAdminForm(forms.ModelForm):
-    memo = forms.CharField(widget=CKEditorUploadingWidget)
-    decision = forms.CharField(widget=CKEditorUploadingWidget)
+    # memo = forms.CharField(widget=CKEditorUploadingWidget)
+    # decision = forms.CharField(widget=CKEditorUploadingWidget)
 
     class Meta:
         model = Task

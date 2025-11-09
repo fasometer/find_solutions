@@ -1,6 +1,5 @@
 from django.db import models
 from django.urls import reverse
-from django.views.generic import ListView
 
 
 # Create your models here.

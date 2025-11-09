@@ -10,7 +10,7 @@ body{
     padding: 10px 30px;
     box-sizing: border-box;
     background: #fff;
-    
+    min-height: 100vh;
 }
 .menu{
     background: #008e56;
@@ -43,7 +43,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     margin-top: 80px;
     
 }
@@ -83,6 +83,12 @@ h1, h2{
     font-size: 20px;
     margin-bottom: 10px;
 }
+.bg textarea {
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
 .center{
     text-align: center;
 }
@@ -155,11 +161,13 @@ a b{
     width: 100%;
 }
 
+
  .but_1{
     width: 75%;
     display: flex;
     flex-direction: column;
     font-size: 20px;
+
  }
  .but_1 select{
     font-size: 20px;

@@ -198,3 +198,13 @@ CKEDITOR_CONFIGS = {
         ]),
     }
 }
+
+# # Source - https://stackoverflow.com/a
+# # Posted by seddonym
+# # Retrieved 2025-11-09, License - CC BY-SA 3.0
+#
+# # Which HTML tags are allowed
+# BLEACH_ALLOWED_TAGS = ['p', 'h3', 'h4', 'em', 'strong', 'a', 'ul', 'ol', 'li', 'blockquote']
+# # Which HTML attributes are allowed
+# BLEACH_ALLOWED_ATTRIBUTES = ['href', 'title', 'name']
+# BLEACH_STRIP_TAGS = True
