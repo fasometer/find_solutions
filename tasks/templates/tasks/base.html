@@ -25,7 +25,7 @@
             <li><a href="{% url 'currenttasks' %}">Актуальные</a></li>
             <li><a href="{% url 'completedtasks' %}">Выполненные</a></li>
             <li><a href="{% url 'inbox' %}">Сообщения</a></li>
-            <li><a href="{% url 'add_page' %}">Добавить статью</a></li>
+<!--            <li><a href="{% url 'add_page' %}">Добавить статью</a></li>-->
             <li>
                 <form action="{% url 'logoutuser' %}" method="post">
                     {% csrf_token %}

@@ -10,7 +10,7 @@ class Task(models.Model):
     lines = models.ForeignKey('Lines', on_delete=models.CASCADE, default="", verbose_name="Линия")
     place = models.ForeignKey('Place', on_delete=models.CASCADE, default="", verbose_name="Место")
     memo = models.TextField(blank=True, verbose_name="Проблема")
-    memo_images = models.ImageField(upload_to="memo/%Y/%m/%d/", blank=True, verbose_name="Фото беды")
+    memo_images = models.ImageField(upload_to="memo/%Y/%m/%d/", blank=True, verbose_name="Фото проблемы")
     decision = models.TextField(blank=True, verbose_name="Решение")
     decision_images = models.ImageField(upload_to="decision/%Y/%m/%d/", blank=True, verbose_name="Фото решения")
     created = models.DateField(auto_now_add=True, verbose_name="Создано")
