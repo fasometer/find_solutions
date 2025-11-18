@@ -15,8 +15,10 @@ class TaskAdminForm(forms.ModelForm):
 
 class TaskAdmin(admin.ModelAdmin):
     form = TaskAdminForm
-    list_display = ('id', 'title', 'lines', 'created', 'data_complete')
+    list_display = ('id', 'title', 'lines', 'place', 'created', 'data_complete')
     list_display_links = ('id', 'title')
+    list_filter = ('lines', 'place')
+    search_fields = ('title', 'lines', 'place')
     readonly_fields = ('created', 'data_complete')
     save_on_top = True
 

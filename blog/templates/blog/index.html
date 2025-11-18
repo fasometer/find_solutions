@@ -2,30 +2,12 @@
 {% load blog_tags %}
 {% load static %}
 {% block content %}
+
 <div class="info">
 
-    <div class="sidebar">
-        <ul>
-            {% if cat_selected == 0 %}
-            <li class="selected">Все категории</li>
-            {% else %}
-            <li><a href="{% url 'index' %}">Все категории</a></li>
-            {% endif %}
-<!--            {% show_categories cat_selected=cat_selected%}-->
-            {% for c in cats %}
-                {% if c.blog__count > 0 %}
-                    {% if c.pk == cat_selected %}
-                    <li class="selected">{{ c.name }}</li>
-                    {% else %}
-                    <li><a href="{{ c.get_absolute_url }}">{{ c.name }}</a></li>
-                    {% endif %}
-                {% endif %}
-            {% endfor %}
-            <li><a href="{% url 'add_page' %}">Добавить статью</a></li>
-        </ul>
-    </div>
-    <div class="main">
+    {% include 'blog/info.html' %}
 
+    <div class="main">
         <ul><h1>Интересная информация</h1>
             {% for p in posts %}
             <li>
@@ -34,7 +16,7 @@
                     {% if p.photo %}
                     <img src="{{ p.photo.url }}" class="image" alt="">
                     {% else %}
-                    <img src="{% static 'blog/overview.jpg' %}" class="image"  alt="">
+                    <img src="{% static 'blog/overview.jpg' %}" class="image" alt="">
                     {% endif %}
                     <h2><a href="{{ p.get_absolute_url }}">{{ p.title }}</a></h2>
                     <p>{{ p.content|striptags|truncatewords:55 }}</p>
@@ -43,33 +25,31 @@
             </li>
             {% endfor %}
         </ul>
-
-
     </div>
 </div>
 {% if page_obj.has_other_pages %}
-    <ul class="list-pages">
-        {% if page_obj.has_previous %}
-            <li class="page-num">
-                <a href="?page={{ page_obj.previous_page_number }}">&lt;</a>
-            </li>
-        {% endif %}
+<ul class="list-pages">
+    {% if page_obj.has_previous %}
+    <li class="page-num">
+        <a href="?page={{ page_obj.previous_page_number }}">&lt;</a>
+    </li>
+    {% endif %}
 
-        {% for p in paginator.page_range %}
-            {% if page_obj.number == p %}
-            <li class="page-num page-num-selected">{{ p }}</li>
-            {% elif p >= page_obj.number|add:-2 and p <= page_obj.number|add:2 %}
-            <li class="page-num">
-                <a href="?page={{ p }}">{{ p }}</a>
-            </li>
-            {% endif %}
-        {% endfor %}
+    {% for p in paginator.page_range %}
+    {% if page_obj.number == p %}
+    <li class="page-num page-num-selected">{{ p }}</li>
+    {% elif p >= page_obj.number|add:-2 and p <= page_obj.number|add:2 %}
+    <li class="page-num">
+        <a href="?page={{ p }}">{{ p }}</a>
+    </li>
+    {% endif %}
+    {% endfor %}
 
-        {% if page_obj.has_next %}
-            <li class="page-num">
-                <a href="?page={{ page_obj.next_page_number }}">&gt;</a>
-            </li>
-        {% endif %}
-    </ul>
+    {% if page_obj.has_next %}
+    <li class="page-num">
+        <a href="?page={{ page_obj.next_page_number }}">&gt;</a>
+    </li>
+    {% endif %}
+</ul>
 {% endif %}
 {% endblock %}

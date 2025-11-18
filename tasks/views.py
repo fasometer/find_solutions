@@ -28,11 +28,13 @@ def signup_user(request):
                 login(request, user)
                 return redirect('currenttasks')
             except IntegrityError:
+                messages.error(request,'Такое имя уже есть. Задайте другое!')
                 return render(request, 'tasks/signupuser.html',
-                              {'form': UserCreationForm(), 'error': 'Такое имя уже есть. Задайте другое'})
+                              {'form': UserCreationForm()})
         else:
+            messages.error(request, 'Пароли не совпадают')
             return render(request, 'tasks/signupuser.html',
-                          {'form': UserCreationForm(), 'error': 'Пароли не совпадают'})
+                          {'form': UserCreationForm()})
 
 
 def login_user(request):
@@ -41,8 +43,9 @@ def login_user(request):
     else:
         user = authenticate(request, username=request.POST['username'], password=request.POST['password'])
         if user is None:
+            messages.error(request, 'Неверные данные для входа')
             return render(request, 'tasks/loginuser.html',
-                          {'form': AuthenticationForm(), 'error': 'Неверные данные для входа'})
+                          {'form': AuthenticationForm()})
         else:
             login(request, user)
             return redirect('currenttasks')
@@ -139,15 +142,10 @@ def delete_task(request, tasks_pk):
 
 @login_required(login_url='login')
 def inbox(request):
-    # profile = request.user
-    # message_request = profile.messages.all().order_by('-created')
-    # unread_count = message_request.filter(is_read=False).count()
-
     search_query, ms = search_messages(request)
     unread_count = ms.filter(is_read=False).count()
     custom_range, ms = paginate_messages(request, ms, 3)
     message_request = ms
-
     users = User.objects.all()
     title = "Все сообщения"
     context = {

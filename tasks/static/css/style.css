@@ -380,7 +380,7 @@ form label{
 
 .alert,
 .alert > .alert__message {
-  background: #bdfeca;
+  background:#8cef8e;
   /* color: var(--color-main); */
   font-size: 20px;
   /* font-weight: var(--font-medium); */
@@ -388,8 +388,8 @@ form label{
 
 .alert.alert--error,
 .alert.alert--error > .alert__message {
-  background-color: var(--color-error-bg);
-  color: var(--color-error);
+  background:rgb(254, 162, 162);
+  /* color: var(--color-error); */
 }
 
 .alert.alert--success,
@@ -409,5 +409,5 @@ form label{
 }
 
 .alert > .alert__close:hover {
-  opacity: 0.85;
+  opacity: 0.95;
 }
