@@ -23,7 +23,19 @@ class TaskAdmin(admin.ModelAdmin):
     save_on_top = True
 
 
+class MessageAdminForm(forms.ModelForm):
+    class Meta:
+        model = Message
+        fields = "__all__"
+
+
+class MessageAdmin(admin.ModelAdmin):
+    form = MessageAdminForm
+    list_display = ('sender', 'recipient', 'subject', 'created')
+    list_filter = ('sender', 'recipient')
+
+
 admin.site.register(Task, TaskAdmin)
 admin.site.register(Lines)
 admin.site.register(Place)
-admin.site.register(Message)
+admin.site.register(Message, MessageAdmin)
