@@ -14,6 +14,8 @@
         {% endif %}
         {% endif %}
         {% endfor %}
+        {% if user.is_authenticated %}
         <li><a href="{% url 'add_page' %}">Добавить статью</a></li>
+        {% endif %}
     </ul>
 </div>
